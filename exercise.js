@@ -36,7 +36,9 @@ var donutBox = {
 	taste: "fabulous"
 };
 
-
+for (var prop in donutBox){
+	console.log(prop);
+}
 
 /*2.  Create a function that will take in an object and loop through the properties of that object.
 Console.log the values of the object. Use the donutBox object from the previous exercise above*/
@@ -44,14 +46,26 @@ Console.log the values of the object. Use the donutBox object from the previous 
 /*@param {Object}
 @return {Object}*/
 
+function donutFunction(donutObject){
+	for (var prop in donutObject){
+		console.log(donutObject[prop]);
+	}
+}
 
+donutFunction(donutBox);
 
 /*3. Create a function that will take in an object and will delete the taste property from the donutBox object above.*/
 
 /*@param {Object}
 @return {Object}*/
 
+function donDelFunc(donutObj){
+	delete donutObj.taste;
+	return donutObj;
+}
 
+donDelFunc(donutBox)
+console.log(donutBox);
 
 /*4. Create a function that will take in an object and will return all the values of the object in an array.*/
 
@@ -66,6 +80,16 @@ var legend = {
 	hobbies: ["martial arts", "fitness", "dancing", "knitting", "coding"]
 };
 
+var legendArr = [];
+
+function returnArr(obj){
+	for(var prop in obj){
+		legendArr.push(prop + ': ' + obj[prop]);
+	}
+	console.log(legendArr);
+}
+
+returnArr(legend);
 
 /*5. Create a function that will take in an object and will return the number of properties (key -value pairs) in the object. Use the legend object above.
 
@@ -75,6 +99,18 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 /*@param {Object}
 @return {Number}*/
+
+function numKeys(obj){
+	var keyAmt = 0;
+	for(var key in obj){
+		if(obj.hasOwnProperty(key)){
+		keyAmt++;
+		}
+	}
+	console.log(keyAmt);
+}
+
+numKeys(legend)
 
 
 
