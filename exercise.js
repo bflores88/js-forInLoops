@@ -119,6 +119,14 @@ numKeys(legend)
 /*@param {Object}
 @return {Object}*/
 
+function occProp(obj){
+	if(obj.hasOwnProperty('occupation')){
+			console.log('Yes, this does have the occupation property');
+	} else {
+		console.log('No, this does not have the occupation property')
+	}
+}
 
+occProp(legend);
 
 
